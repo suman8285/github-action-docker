@@ -1,0 +1,3 @@
+User cloud_user
+ServerAliveInterval 60
+ServerAliveCountMax 2
