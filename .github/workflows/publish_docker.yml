@@ -17,6 +17,10 @@ jobs:
       - name: Build with maven
         run: mvn clean install
 
+      - name: login to Dockerhub
+        run: |
+           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
+
       - name: Build aand push the image
         uses: mr-smithers-excellent/docker-build-push@v5
         with: 
