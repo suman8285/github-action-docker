@@ -11,7 +11,8 @@ jobs:
         id: tags
         shell: bash
         run: |
-          echo "::set-output name=version::$(sed -r 'ls/.+alpine://'
+          chmod +x $GITHUB_WORKSPACE/Dockerfile
+          echo "::set-output name=version::$(sed -r 'ls/.+oracle-java://'
           $GITHUB_WORKSPACE/Dockerfile)"
 
       - name: Setup Docker Buildx
