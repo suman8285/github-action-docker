@@ -36,4 +36,4 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
           registry: docker.pkg.github.com
           push: true
-          tags: github-actions:latest
+          tags: latest
