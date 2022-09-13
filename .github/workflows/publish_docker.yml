@@ -21,7 +21,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: $ {{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           registry: docker.pkg.github.com
 
       - name: Setup Docker Buildx
@@ -33,7 +33,7 @@ jobs:
           context: .
           file: ./Dockerfile
           username: $ {{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           registry: docker.pkg.github.com
           push: true
           tags: suman8285/github-actions:latest
