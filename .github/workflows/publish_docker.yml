@@ -19,7 +19,7 @@ jobs:
 
       - name: login to Dockerhub
         run: |
-           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
+           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Build aand push the image
         uses: mr-smithers-excellent/docker-build-push@v5
