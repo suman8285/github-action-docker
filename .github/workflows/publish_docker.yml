@@ -22,7 +22,7 @@ jobs:
         with:
           username: $ {{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
-          registry: doker.pkg.github.com
+          registry: docker.pkg.github.com
 
       - name: Build and push to docker hub
         uses: docker/build-push-action@v2
