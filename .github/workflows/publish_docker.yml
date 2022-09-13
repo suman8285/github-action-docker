@@ -32,6 +32,6 @@ jobs:
           context: .
           #username: $ {{ secrets.DOCKER_HUB_USERNAME }}
           #password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          #registry: docker.pkg.github.com
+          registry: docker.pkg.github.com
           push: true
           tags: suman8285/github-actions:latest
