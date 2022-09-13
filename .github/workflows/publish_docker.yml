@@ -31,6 +31,4 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           registry: docker.pkg.github.com
           push: true
-          tags: |
-            ${{ secrets.DOCKER_HUB_NAMESPACE }}/playground-ssh:latest
-            ${{ secrets.DOCKER_HUB_NAMESPACE }}/playground-ssh:latest-${{ steps.tags.outputs.version}}
+          tags: latest
