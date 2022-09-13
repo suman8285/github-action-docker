@@ -11,15 +11,27 @@ jobs:
         id: tags
         shell: bash
         run: |
-          echo "::set-output name=version::$(sed -r 'ls/.+oracle-java://'
+          echo "::set-output name=version::$(sed -r 'ls/.+alpine://'
           $GITHUB_WORKSPACE/Dockerfile)"
 
-     
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-      - name: Build and push to docker plain
-        run: |
-          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker build -t app .   
-          docker tag app suman8285/github-actions
-          docker tag local-image:tagname new-repo:tagname
-          docker push suman8285/github-actions
+      - name: login to Dokerhub
+        uses: docker/login-action@v1
+        with:
+          username: $ {{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          registry: docker.pkg.github.com
+
+
+
+      - name: Build and push to docker hub
+        uses: docker/build-push-action@v2
+        with: 
+          context: .
+          #username: $ {{ secrets.DOCKER_HUB_USERNAME }}
+          #password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          #registry: docker.pkg.github.com
+          push: true
+          tags: suman8285/github-actions:latest
