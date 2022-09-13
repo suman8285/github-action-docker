@@ -7,6 +7,16 @@ jobs:
       - name: checkout source code
         uses: actions/checkout@v2
 
+      - name: setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Build with maven
+        run: mvn clean install
+
       - name: Get image
         id: tags
         shell: bash
