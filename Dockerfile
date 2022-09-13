@@ -1,5 +1,5 @@
-FROM openebs/rhel7
-RUN yum -y update && yum -y install java-1.8.0-openjdk && yum clean all
+FROM java:8
+
 USER root
 # Create app directory
 RUN mkdir -p /app
