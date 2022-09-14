@@ -33,7 +33,7 @@ jobs:
           name-repository: suman8285/github-actions #repository name, specify what the repository will be called on dockerhub.
           tag: v1 #tag for repository
           docker-username: ${{ secrets.DOCKER_HUB_USERNAME }} # docker account - username
-          docker-password: ${{ secrets.DOCKER_HUB_PASSWORD }} # docker password, it should use access token
+          docker-password: ${{ secrets.DOCKER_HUB_TOKEN }} # docker password, it should use access token
          
 
       - name: Build & push Docker image
