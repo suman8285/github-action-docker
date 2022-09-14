@@ -22,7 +22,7 @@ jobs:
         with:
           username: $ {{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
-          registry: https://ghcr.io
+          registry: docker.pkg.github.com
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -32,7 +32,7 @@ jobs:
         with:
           image: github-actions/cidemo
           tags: v1, latest
-          registry: https://ghcr.io
+          registry: docker.pkg.github.com
           #dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
