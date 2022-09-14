@@ -30,7 +30,7 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: suman8285/github-actions
+          image: github-actions
           tags: v1, latest
           registry: docker.pkg.github.com
           #dockerfile: Dockerfile.ci
