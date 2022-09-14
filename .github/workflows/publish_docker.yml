@@ -34,6 +34,6 @@ jobs:
           tags: v1, latest
           registry: docker.pkg.github.com
           #dockerfile: Dockerfile.ci
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          #username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          #password: ${{ secrets.DOCKER_HUB_TOKEN }}
       
